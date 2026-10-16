@@ -1,0 +1,56 @@
+[
+  {
+    "id": "inq-1792095761765",
+    "referenceCode": "JUBOH-INQ-2026-4089",
+    "fullName": "Eleanor Vance",
+    "email": "e.vance@vanceholdings.org",
+    "phone": "+1 (404) 555-7890",
+    "organization": "Vance Capital Partners",
+    "inquiryType": "Executive Education & Academy",
+    "message": "We are seeking an institutional co-investment dialogue regarding high-impact commercial and real estate acquisition opportunities in regional growth corridors.",
+    "status": "IN_PROGRESS",
+    "createdAt": "2026-10-15T20:22:41.765Z",
+    "updatedAt": "2026-10-15T20:26:08.248Z"
+  },
+  {
+    "id": "inq-101",
+    "referenceCode": "JUBOH-INQ-2026-8491",
+    "fullName": "Marcus Holloway",
+    "email": "m.holloway@southeastplanning.gov",
+    "organization": "Southeastern Municipal Council",
+    "phone": "+1 (404) 555-0192",
+    "inquiryType": "Government Contracting",
+    "message": "We are preparing a qualification packet for a 120,000 sq ft regional civic facility and would like to formally invite JUBOH to submit an institutional qualification portfolio.",
+    "status": "NEW",
+    "createdAt": "2026-10-15T14:32:00.000Z",
+    "updatedAt": "2026-10-15T14:32:00.000Z"
+  },
+  {
+    "id": "inq-102",
+    "referenceCode": "JUBOH-INQ-2026-4720",
+    "fullName": "David Vance",
+    "email": "dvance@vanceholdings.com",
+    "organization": "Vance Real Estate Holdings",
+    "phone": "+1 (212) 555-8831",
+    "inquiryType": "Real Estate Development",
+    "message": "Seeking a co-development master partner for an 18-acre urban infill parcel with approved zoning for mixed-use residential. Requesting preliminary advisory review.",
+    "status": "IN_PROGRESS",
+    "internalNotes": "Initial review assigned to real estate development division.",
+    "createdAt": "2026-10-12T11:20:00.000Z",
+    "updatedAt": "2026-10-13T09:15:00.000Z"
+  },
+  {
+    "id": "inq-103",
+    "referenceCode": "JUBOH-INQ-2026-1184",
+    "fullName": "Dr. Evelyn Reed",
+    "email": "ereed@universityendowment.edu",
+    "organization": "University Endowment Foundation",
+    "phone": "+1 (617) 555-3920",
+    "inquiryType": "Business Strategy & Capital Advisory",
+    "message": "Requesting a strategic advisory consultation regarding our campus real estate asset portfolio and potential P3 capitalization models for upcoming capital campaign.",
+    "status": "RESOLVED",
+    "internalNotes": "Consultation call concluded. Term sheet pending next board cycle.",
+    "createdAt": "2026-10-08T16:45:00.000Z",
+    "updatedAt": "2026-10-11T17:00:00.000Z"
+  }
+]

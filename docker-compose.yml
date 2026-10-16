@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  juboh-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: juboh-enterprise-app
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL}
+      - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+      - SUPABASE_SERVICE_ROLE_KEY=${SUPABASE_SERVICE_ROLE_KEY}
+      - ADMIN_AUTH_SECRET=${ADMIN_AUTH_SECRET}
+      - ADMIN_DEFAULT_EMAIL=${ADMIN_DEFAULT_EMAIL}
+      - ADMIN_DEFAULT_PASSWORD=${ADMIN_DEFAULT_PASSWORD}
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - NEXT_PUBLIC_APP_URL=${NEXT_PUBLIC_APP_URL}
+    env_file:
+      - .env

@@ -1,0 +1,285 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand Foundation */
+    --background: 43 27% 95%; /* #F6F3ED Warm Ivory */
+    --foreground: 210 12% 16%; /* #252A2F Charcoal Ink */
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 12% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 12% 16%;
+
+    --primary: 37 35% 54%; /* #B49360 Muted Brass */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 213 47% 12%; /* #101D2C Midnight Navy */
+    --secondary-foreground: 43 27% 95%;
+
+    --muted: 38 22% 88%;
+    --muted-foreground: 210 8% 40%;
+
+    --accent: 208 34% 29%; /* #314C63 Slate Steel */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 38 22% 84%; /* #DFD9CE Hairline Rule */
+    --input: 38 22% 84%;
+    --ring: 37 35% 54%;
+
+    --radius: 2px;
+  }
+
+  .dark {
+    --background: 213 47% 12%; /* #101D2C Midnight Navy */
+    --foreground: 43 27% 95%; /* #F6F3ED Warm Ivory */
+
+    --card: 213 40% 15%;
+    --card-foreground: 43 27% 95%;
+
+    --popover: 213 40% 15%;
+    --popover-foreground: 43 27% 95%;
+
+    --primary: 37 35% 54%; /* #B49360 Muted Brass */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 12% 16%; /* Charcoal */
+    --secondary-foreground: 43 27% 95%;
+
+    --muted: 213 30% 20%;
+    --muted-foreground: 213 15% 65%;
+
+    --accent: 208 34% 35%;
+    --accent-foreground: 43 27% 95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 213 30% 22%;
+    --input: 213 30% 22%;
+    --ring: 37 35% 54%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
+    overscroll-behavior-y: none;
+  }
+
+  ::selection {
+    background-color: #B49360;
+    color: #FFFFFF;
+  }
+
+  /* Custom Luxury Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #101D2C;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #314C63;
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #B49360;
+  }
+
+  /* Architectural rules */
+  hr {
+    border-color: #DFD9CE;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .hairline-b {
+    border-bottom: 1px solid #DFD9CE;
+  }
+
+  .hairline-t {
+    border-top: 1px solid #DFD9CE;
+  }
+
+  .hairline-r {
+    border-right: 1px solid #DFD9CE;
+  }
+
+  .hairline-l {
+    border-left: 1px solid #DFD9CE;
+  }
+
+  .dark-hairline-b {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .dark-hairline-t {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .editorial-measure {
+    max-width: 68ch;
+  }
+
+  /* Section-Level Scroll Trigger Animation System */
+  .scroll-section {
+    position: relative;
+  }
+
+  /* 1. Header Glide & Fade */
+  .scroll-section .section-header {
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  .scroll-section.is-in-view .section-header {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  /* 2. Image Scale & Unmask Reveal */
+  .scroll-section .img-unmask-container {
+    overflow: hidden;
+    position: relative;
+  }
+  .scroll-section .img-unmask-reveal {
+    opacity: 0.3;
+    transform: scale(1.22) translate3d(0, 30px, 0);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  .scroll-section.is-in-view .img-unmask-reveal {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+
+  /* 3. Staggered Cards (Bold 80px rise with dramatic 250ms sequence) */
+  .scroll-section .stagger-card {
+    opacity: 0;
+    transform: translate3d(0, 80px, 0);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  .scroll-section.is-in-view .stagger-card:nth-child(1) {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition-delay: 150ms;
+  }
+  .scroll-section.is-in-view .stagger-card:nth-child(2) {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition-delay: 400ms;
+  }
+  .scroll-section.is-in-view .stagger-card:nth-child(3) {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition-delay: 650ms;
+  }
+  .scroll-section.is-in-view .stagger-card:nth-child(4) {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition-delay: 900ms;
+  }
+
+  /* 4. Left and Right Narrative Sliders */
+  .scroll-section .slide-from-left {
+    opacity: 0;
+    transform: translate3d(-70px, 0, 0);
+    transition: opacity 0.95s cubic-bezier(0.16, 1, 0.3, 1), transform 0.95s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  .scroll-section.is-in-view .slide-from-left {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .scroll-section .slide-from-right {
+    opacity: 0;
+    transform: translate3d(70px, 0, 0);
+    transition: opacity 0.95s cubic-bezier(0.16, 1, 0.3, 1), transform 0.95s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  .scroll-section.is-in-view .slide-from-right {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  /* Card Hover Lift */
+  .card-hover-lift {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+  }
+  .card-hover-lift:hover {
+    transform: translateY(-5px);
+  }
+
+  /* Luxury Button Sheen & Specular Sweep */
+  .btn-sheen {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-sheen::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -70%;
+    width: 45%;
+    height: 200%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.32) 50%,
+      transparent 100%
+    );
+    transform: rotate(25deg);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), left 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    z-index: 10;
+  }
+  .btn-sheen:hover::after {
+    left: 140%;
+  }
+
+  /* Dark Button Sheen */
+  .btn-sheen-dark::after {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(197, 160, 89, 0.25) 50%,
+      transparent 100%
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
