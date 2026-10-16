@@ -23,11 +23,11 @@ export function DesktopNav({ isDark = false }: DesktopNavProps) {
             key={item.href}
             href={item.href}
             className={cn(
-              "text-[12px] tracking-[0.08em] uppercase transition-colors duration-200 py-1 font-medium",
+              "text-[11px] tracking-[0.16em] uppercase transition-colors duration-200 py-1 font-medium",
               isDark
                 ? isActive
-                  ? "text-brand-brass font-semibold"
-                  : "text-white/80 hover:text-white"
+                  ? "text-[#C5A059] font-semibold"
+                  : "text-white/85 hover:text-white"
                 : isActive
                 ? "text-brand-brass font-semibold"
                 : "text-brand-charcoal/80 hover:text-brand-charcoal"
@@ -42,12 +42,12 @@ export function DesktopNav({ isDark = false }: DesktopNavProps) {
         type="button"
         aria-label="Search institutional portal"
         className={cn(
-          "p-1 rounded transition-colors focus:outline-none focus:ring-1 focus:ring-brand-brass",
-          isDark ? "text-white/70 hover:text-white" : "text-brand-charcoal/70 hover:text-brand-charcoal"
+          "p-1 rounded transition-colors focus:outline-none focus:ring-1 focus:ring-brand-brass ml-1",
+          isDark ? "text-white/80 hover:text-white" : "text-brand-charcoal/70 hover:text-brand-charcoal"
         )}
       >
         <svg
-          className="w-4 h-4 stroke-[1.75]"
+          className="w-4 h-4 stroke-[1.8]"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

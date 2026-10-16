@@ -48,9 +48,9 @@ export function Header() {
         <Link href="/" className="group flex flex-col focus:outline-none">
           <span
             className={cn(
-              "font-serif tracking-[0.2em] text-2xl sm:text-[24px] font-medium leading-none transition-colors",
+              "font-serif tracking-[0.18em] text-2xl sm:text-[26px] font-normal leading-none transition-colors",
               isDarkOverlay || isScrolled
-                ? "text-white group-hover:text-brand-brass"
+                ? "text-white"
                 : "text-brand-charcoal group-hover:text-brand-navy"
             )}
           >
@@ -58,10 +58,10 @@ export function Header() {
           </span>
           <span
             className={cn(
-              "text-[8px] tracking-[0.3em] uppercase font-sans font-semibold mt-0.5 transition-colors",
+              "text-[8px] tracking-[0.38em] uppercase font-sans font-medium mt-1 transition-colors",
               isDarkOverlay || isScrolled
-                ? "text-brand-brass"
-                : "text-brand-charcoal/60 group-hover:text-brand-brass"
+                ? "text-[#C5A059]"
+                : "text-brand-charcoal/60"
             )}
           >
             COMPANIES
@@ -75,13 +75,11 @@ export function Header() {
         <div className="flex items-center gap-4">
           <Button
             asChild
-            variant="default"
-            size="sm"
-            className="hidden sm:inline-flex text-[11px] tracking-kicker h-9 sm:h-10 px-5 gap-1.5"
+            className="hidden sm:inline-flex bg-[#C5A059] hover:bg-[#B38F48] text-[#181512] font-semibold text-[11px] tracking-[0.14em] uppercase h-9 sm:h-10 px-5 gap-2 rounded-[2px] shadow-sm transition-all hover:shadow-[0_4px_16px_rgba(197,160,89,0.35)]"
           >
             <Link href={siteConfig.primaryCta.href}>
               <span>{siteConfig.primaryCta.title}</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <ArrowRight className="w-3.5 h-3.5 stroke-[2.4]" />
             </Link>
           </Button>
 
